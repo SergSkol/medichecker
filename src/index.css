@@ -6,3 +6,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.categoriesTotal img {
+  width: 50px;
+}
+
+.categoriesList {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  list-style: none;
+}
+
+.categoryItem img {
+  width: 50px;
+}

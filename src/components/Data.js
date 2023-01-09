@@ -9,31 +9,66 @@ import cat6 from './images/cat6.png';
 
 const standardCategories = [
   {
+    id: 1,
     name: 'ORAL',
     image: cat1,
     count: 0,
   },
   {
+    id: 2,
     name: 'TOPICAL',
     image: cat2,
     count: 0,
   },
   {
+    id: 3,
     name: 'INTRAVENOUS',
     image: cat3,
     count: 0,
   },
   {
+    id: 4,
     name: 'INTRAMUSCULAR',
     image: cat4,
     count: 0,
   },
   {
+    id: 5,
     name: 'OPHTHALMIC',
     image: cat5,
     count: 0,
   },
+  {
+    id: 6,
+    name: 'DENTAL',
+    image: cat6,
+    count: 0,
+  },
 ];
+
+const getDateFrom = () => {
+  const now = new Date();
+  now.setDate(now.getDate() - 7);
+
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const newDate = year * 10000 + month * 100 + day;
+
+  return newDate;
+};
+
+const getDateTo = () => {
+  const now = new Date();
+  now.setDate(now.getDate() + 365);
+
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const newDate = year * 10000 + month * 100 + day;
+
+  return newDate;
+};
 
 const getCategories = () => async (dispatch) => {
   const transformData = (data) => {
@@ -48,33 +83,9 @@ const getCategories = () => async (dispatch) => {
     return newData;
   };
 
-  const getDataFrom = () => {
-    const now = new Date();
-    now.setDate(now.getDate() - 7);
-
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-    const newDate = year * 10000 + month * 100 + day;
-
-    return newDate;
-  };
-
-  const getDataTo = () => {
-    const now = new Date();
-    now.setDate(now.getDate() + 365);
-
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-    const newDate = year * 10000 + month * 100 + day;
-
-    return newDate;
-  };
-
   let url = process.env.REACT_APP_COUNT_ROUTE;
-  const dateFrom = getDataFrom();
-  const dateTo = getDataTo();
+  const dateFrom = getDateFrom();
+  const dateTo = getDateTo();
   url += `&search=effective_time:[${dateFrom}+TO+${dateTo}]`;
 
   const sendRequest = async () => {
