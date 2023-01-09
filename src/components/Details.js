@@ -33,6 +33,7 @@ const Details = () => {
         {' '}
         <img alt="category" src={location.state.image} />
         {location.state.name}
+        {details.length}
 
         <ul className="detailsList">
           {details.map((detail) => (

@@ -125,7 +125,7 @@ const getDetails = (category) => async (dispatch) => {
   const dateTo = getDateTo();
   url += `&search=effective_time:[${dateFrom}+TO+${dateTo}]`;
   url += `+AND+openfda.route:${category}`;
-  url += '&limit=100';
+  url += '&limit=1000';
 
   const sendRequest = async () => {
     await axios.get(`${url}`)
