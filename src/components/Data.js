@@ -108,6 +108,7 @@ const getDetails = (category) => async (dispatch) => {
 
     data.forEach((item) => {
       const newItem = {
+        id: item.set_id,
         name: item.spl_product_data_elements,
         AI: item.active_ingredient,
         purpose: item.purpose,

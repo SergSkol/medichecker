@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   const handleClick = (e) => {
-    navigate(`/details/${e}`, { state: e });
+    navigate(`/details/${e.name}`, { state: e });
   };
 
   return (
@@ -34,7 +34,7 @@ const Home = () => {
       </div>
       <ul className="categoriesList">
         {categories.map((category) => (
-          <li className="categoryItem" key={category.id} onClick={() => handleClick(category.name)}>
+          <li className="categoryItem" key={category.id} onClick={() => handleClick(category)}>
             <img alt="category" src={category.image} />
             <p>{category.name}</p>
             <p>{category.count}</p>

@@ -9,13 +9,13 @@ const Details = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const details = useSelector((state) => state.details[location.state]) || [];
+  const details = useSelector((state) => state.details[location.state.name]) || [];
 
   useEffect(() => {
     if (details.length === 0) {
-      dispatch(getDetails(location.state));
+      dispatch(getDetails(location.state.name));
     }
-  }, [dispatch, details.length, location.state]);
+  }, [dispatch, details.length, location.state.name]);
 
   return (
     <div className="detailsPage">
@@ -32,11 +32,11 @@ const Details = () => {
       <div className="detailsInfo">
         {' '}
         <img alt="category" src={location.state.image} />
-        {location.state}
+        {location.state.name}
 
         <ul className="detailsList">
           {details.map((detail) => (
-            <li className="detailItem" key={detail.name}>
+            <li className="detailItem" key={detail.id}>
               <p>
                 Name:
                 {detail.name}
