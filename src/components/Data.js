@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getCategoriesAction } from '../redux/categories/categories';
+import { getDetailsAction } from '../redux/details/details';
 import cat1 from './images/cat1.png';
 import cat2 from './images/cat2.png';
 import cat3 from './images/cat3.png';
@@ -101,4 +102,41 @@ const getCategories = () => async (dispatch) => {
   await sendRequest();
 };
 
-export { getCategories };
+const getDetails = (category) => async (dispatch) => {
+  const transformData = (data) => {
+    const newData = [];
+
+    data.forEach((item) => {
+      const newItem = {
+        name: item.spl_product_data_elements,
+        AI: item.active_ingredient,
+        purpose: item.purpose,
+        indications: item.indications_and_usage,
+
+      };
+      newData.push(newItem);
+    });
+    return newData;
+  };
+
+  let url = process.env.REACT_APP_BASE_URL;
+  const dateFrom = getDateFrom();
+  const dateTo = getDateTo();
+  url += `&search=effective_time:[${dateFrom}+TO+${dateTo}]`;
+  url += `+AND+openfda.route:${category}`;
+  url += '&limit=100';
+
+  const sendRequest = async () => {
+    await axios.get(`${url}`)
+      .then((response) => {
+        const { data } = response;
+        const details = transformData(data.results);
+        dispatch(getDetailsAction(category, details));
+      })
+      .catch(() => {
+      });
+  };
+  await sendRequest();
+};
+
+export { getCategories, getDetails };

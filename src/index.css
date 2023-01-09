@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.categoriesTotal {
+  background-color: #5788e4;
+}
+
 .categoriesTotal img {
   width: 50px;
 }

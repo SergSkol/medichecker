@@ -34,7 +34,7 @@ const Home = () => {
       </div>
       <ul className="categoriesList">
         {categories.map((category) => (
-          <li className="categoryItem" key={category.name} onClick={() => handleClick(category.name)}>
+          <li className="categoryItem" key={category.id} onClick={() => handleClick(category.name)}>
             <img alt="category" src={category.image} />
             <p>{category.name}</p>
             <p>{category.count}</p>
