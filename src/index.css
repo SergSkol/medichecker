@@ -1,26 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,500&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.categoriesTotal {
-  background-color: #5788e4;
+.categoriesHeader {
+  color: #fff;
+  background-color: #35548b;
+  margin: 0;
+  padding-left: 10px;
 }
 
-.categoriesTotal img {
-  width: 50px;
+.categoriesTotalContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #5788e4;
+  color: #fff;
+  padding: 10px;
+}
+
+.categoriesTotalContainer img {
+  position: relative;
+  top: 0.1em;
+  left: 2em;
+  width: 100px;
+  filter: invert(22%) sepia(9%) saturate(5505%) hue-rotate(186deg) brightness(92%) contrast(83%);
+}
+
+.categoriesSubHeader {
+  color: #fff;
+  background-color: #35548b;
+  margin: 0;
+  padding-left: 10px;
 }
 
 .categoriesList {
   display: grid;
   grid-template-columns: 50% 50%;
   list-style: none;
+  margin: 0;
+}
+
+.categoryItem {
+  width: 100%;
+  text-align: end;
+  border: none;
+  color: #fff;
+  background-color: #3e61a3;
+}
+
+.categoryItem:nth-child(4n) {
+  background-color: #4168af;
+}
+
+.categoryItem:nth-child(4n+1) {
+  background-color: #4168af;
+}
+
+.categoryItem h3 {
+  font-family: 'Poppins', sans-serif;
 }
 
 .categoryItem img {
-  width: 50px;
+  position: relative;
+  top: 1em;
+  right: 5em;
+  width: 100px;
+  filter: invert(22%) sepia(9%) saturate(5505%) hue-rotate(186deg) brightness(92%) contrast(83%);
+}
+
+.detailsHeader button {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  background-color: #35548b;
+  margin: 0;
+  padding-left: 10px;
+  border: none;
+}
+
+.detailsHeader img {
+  width: 20px;
+  margin: 1em;
+  filter: invert();
+}
+
+.detailsTotalContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #5788e4;
+  color: #fff;
+  padding: 10px;
+}
+
+.detailsTotalContainer img {
+  position: relative;
+  top: 0.1em;
+  left: 2em;
+  width: 100px;
+  filter: invert(22%) sepia(9%) saturate(5505%) hue-rotate(186deg) brightness(92%) contrast(83%);
+}
+
+.detailsSubHeader {
+  color: #fff;
+  background-color: #35548b;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+}
+
+.detailItem:nth-child(odd) {
+  background-color: #4168af;
+  color: #fff;
+}
+
+.detailItem:nth-child(even) {
+  background-color: #3e61a3;
+  color: #fff;
+}
+
+.detailItemInfo {
+  margin: 10px;
 }

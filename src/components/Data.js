@@ -1,12 +1,16 @@
 import axios from 'axios';
 import { getCategoriesAction } from '../redux/categories/categories';
 import { getDetailsAction } from '../redux/details/details';
-import cat1 from './images/cat1.png';
-import cat2 from './images/cat2.png';
-import cat3 from './images/cat3.png';
-import cat4 from './images/cat4.png';
-import cat5 from './images/cat5.png';
-import cat6 from './images/cat6.png';
+import cat1 from './images/cat1.svg';
+import cat2 from './images/cat2.svg';
+import cat3 from './images/cat3.svg';
+import cat4 from './images/cat4.svg';
+import cat5 from './images/cat5.svg';
+import cat6 from './images/cat6.svg';
+import cat7 from './images/cat7.svg';
+import cat8 from './images/cat8.svg';
+import cat9 from './images/cat9.svg';
+import cat10 from './images/cat10.svg';
 
 const standardCategories = [
   {
@@ -43,6 +47,30 @@ const standardCategories = [
     id: 6,
     name: 'DENTAL',
     image: cat6,
+    count: 0,
+  },
+  {
+    id: 7,
+    name: 'RESPIRATORY (INHALATION)',
+    image: cat7,
+    count: 0,
+  },
+  {
+    id: 8,
+    name: 'SUBLINGUAL',
+    image: cat8,
+    count: 0,
+  },
+  {
+    id: 9,
+    name: 'SUBCUTANEOUS',
+    image: cat9,
+    count: 0,
+  },
+  {
+    id: 10,
+    name: 'NASAL',
+    image: cat10,
     count: 0,
   },
 ];

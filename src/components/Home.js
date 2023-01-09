@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getCategories } from './Data';
-import categoriesTotalImg from './images/box.png';
+import categoriesTotalImg from './images/box.svg';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -26,21 +26,38 @@ const Home = () => {
 
   return (
     <div>
-      <div>New labeled products per week</div>
-      <div className="categoriesTotal">
+      <h2 className="categoriesHeader">new labeled drugs per week</h2>
+      <div className="categoriesTotalContainer">
         <img alt="total" src={categoriesTotalImg} />
-        NEW DRUGS
-        <p>{getTotalCount(categories)}</p>
+        <h3 className="categoriesTotalCount">
+          TOTAL NEW DRUGS
+          <p>
+            {getTotalCount(categories)}
+            {' '}
+            drugs
+          </p>
+        </h3>
       </div>
-      <ul className="categoriesList">
+      <h4 className="categoriesSubHeader">STATS BY ROUTE</h4>
+      <section className="categoriesList">
         {categories.map((category) => (
-          <li className="categoryItem" key={category.id} onClick={() => handleClick(category)}>
+          <button
+            className="categoryItem"
+            key={category.id}
+            type="button"
+            onClick={() => handleClick(category)}
+            onKeyDown={() => handleClick(category)}
+          >
             <img alt="category" src={category.image} />
-            <p>{category.name}</p>
-            <p>{category.count}</p>
-          </li>
+            <h3>{category.name}</h3>
+            <h3>
+              {category.count}
+              {' '}
+              drugs
+            </h3>
+          </button>
         ))}
-      </ul>
+      </section>
     </div>
   );
 };

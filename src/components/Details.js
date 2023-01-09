@@ -19,46 +19,56 @@ const Details = () => {
 
   return (
     <div className="detailsPage">
-      <header className="detailsHeader">
+      <div className="detailsHeader">
         <button
           type="button"
           className="detailsBackBtn"
           onClick={() => navigate(-1)}
         >
           <img alt="back" src={backIcon} />
-          back to categories
+          <h2>back to categories</h2>
         </button>
-      </header>
-      <div className="detailsInfo">
+      </div>
+      <div className="detailsTotalContainer">
         {' '}
         <img alt="category" src={location.state.image} />
-        {location.state.name}
-        {details.length}
-
-        <ul className="detailsList">
-          {details.map((detail) => (
-            <li className="detailItem" key={detail.id}>
-              <p>
-                Name:
-                {detail.name}
-              </p>
-              <p>
-                Ingridients:
-                {detail.AI}
-              </p>
-              <p>
-                Purpose:
-                {detail.purpose}
-              </p>
-              <p>
-                Indications:
-                {detail.indications}
-              </p>
-            </li>
-          ))}
-        </ul>
-
+        <h3 className="detailsTotalCount">
+          {location.state.name}
+          <p>
+            {details.length}
+            {' '}
+            drugs
+          </p>
+        </h3>
       </div>
+      <h4 className="detailsSubHeader">DRUGS BREAKDOWN</h4>
+      <ul className="detailsList">
+        {details.map((detail) => (
+          <li className="detailItem" key={detail.id}>
+            <p className="detailItemInfo">
+              Name:
+              <br />
+              {detail.name}
+            </p>
+            <p className="detailItemInfo">
+              Ingridients:
+              <br />
+              {detail.AI}
+            </p>
+            <p className="detailItemInfo">
+              Purpose:
+              <br />
+              {detail.purpose}
+            </p>
+            <p className="detailItemInfo">
+              Indications:
+              <br />
+              {detail.indications}
+            </p>
+          </li>
+        ))}
+      </ul>
+
     </div>
   );
 };
