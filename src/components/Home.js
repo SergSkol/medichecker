@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { getCategories } from './Data';
 import Header from './Header';
+import Categories from './Categories';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const categories = useSelector((state) => state.categories.categories) || [];
+  const [searchCategory, applySearchCategory] = useState('');
 
   useEffect(() => {
     if (categories.length === 0) {
@@ -15,33 +15,27 @@ const Home = () => {
     }
   }, [dispatch, categories.length]);
 
-  const handleClick = (e) => {
-    navigate(`/details/${e.name}`, { state: e });
+  const foundCategories = categories.filter(
+    (category) => category.name.toLowerCase().includes(searchCategory.toLowerCase()),
+  );
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    applySearchCategory(e.target.value);
   };
 
   return (
     <div>
       <Header />
-      <h4 className="categoriesSubHeader">STATS BY ROUTE</h4>
-      <section className="categoriesList">
-        {categories.map((category) => (
-          <button
-            className="categoryItem"
-            key={category.id}
-            type="button"
-            onClick={() => handleClick(category)}
-            onKeyDown={() => handleClick(category)}
-          >
-            <img alt="category" src={category.image} />
-            <h3>{category.name}</h3>
-            <h3>
-              {category.count}
-              {' '}
-              drugs
-            </h3>
-          </button>
-        ))}
-      </section>
+      <div className="categoriesSearch">
+        <h4 className="categoriesSubHeader">STATS BY ROUTE</h4>
+        <input type="text" value={searchCategory} onChange={handleSearch} placeholder="search for route" />
+      </div>
+      {searchCategory.length ? (
+        <Categories categories={foundCategories} />
+      ) : (
+        <Categories categories={categories} />
+      )}
     </div>
   );
 };

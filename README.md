@@ -29,7 +29,7 @@
 
 # 📖 MediChecker <a name="about-project"></a>
 
-**MediChecker**  is a web application which could provide the count of new drugs, which were approved by U.S. Food and Drugs Administration, per last 7 days. App shows the count as per category (route) and shows details by each record within selected category. Data is fetching from openFDA API.
+**MediChecker** is a web application that could provide the count of new drugs, which were approved by the U.S. Food and Drugs Administration, in the last 7 days. The app shows the count as per category (route) and shows details by each record within the selected category. Data is fetching from openFDA API.
 
 # 👁‍🗨 Preview
 
