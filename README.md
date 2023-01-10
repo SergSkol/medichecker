@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><b>Capstone 3</b></h1>
+  <h1><b>MediChecker</b></h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -27,9 +27,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Capstone 3 <a name="about-project"></a>
+# 📖 MediChecker <a name="about-project"></a>
 
-**Capstone 3**  is a web application ...
+**MediChecker**  is a web application which could provide the count of new drugs, which were approved by U.S. Food and Drugs Administration, per last 7 days. App shows the count as per category (route) and shows details by each record within selected category. Data is fetching from openFDA API.
 
 # 👁‍🗨 Preview
 
@@ -77,7 +77,7 @@ Placeholder
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo](  )
+- [Live Demo]( https://medichecker.vercel.app/ )
 
 <!-- GETTING STARTED -->
 
