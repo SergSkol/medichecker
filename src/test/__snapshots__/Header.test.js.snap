@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Header component Snapshot testing 1`] = `
+Array [
+  <div>
+    <h2
+      className="categoriesHeader"
+    >
+      new labeled drugs per week
+    </h2>
+    <div
+      className="categoriesTotalContainer"
+    >
+      <img
+        alt="total"
+        src="box.svg"
+      />
+      <h3
+        className="categoriesTotalCount"
+      >
+        TOTAL NEW DRUGS
+        <p>
+          0
+           
+          drugs
+        </p>
+      </h3>
+    </div>
+  </div>,
+  ",",
+]
+`;

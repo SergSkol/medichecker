@@ -12,6 +12,9 @@ import cat8 from './images/cat8.svg';
 import cat9 from './images/cat9.svg';
 import cat10 from './images/cat10.svg';
 
+const REACT_APP_BASE_URL = 'https://api.fda.gov/drug/label.json?';
+const REACT_APP_COUNT_ROUTE = 'https://api.fda.gov/drug/label.json?count=openfda.route.exact';
+
 const standardCategories = [
   {
     id: 1,
@@ -112,7 +115,7 @@ const getCategories = () => async (dispatch) => {
     return newData;
   };
 
-  let url = process.env.REACT_APP_COUNT_ROUTE;
+  let url = REACT_APP_COUNT_ROUTE; // process.env.REACT_APP_COUNT_ROUTE;
   const dateFrom = getDateFrom();
   const dateTo = getDateTo();
   url += `&search=effective_time:[${dateFrom}+TO+${dateTo}]`;
@@ -148,7 +151,7 @@ const getDetails = (category) => async (dispatch) => {
     return newData;
   };
 
-  let url = process.env.REACT_APP_BASE_URL;
+  let url = REACT_APP_BASE_URL; // process.env.REACT_APP_BASE_URL;
   const dateFrom = getDateFrom();
   const dateTo = getDateTo();
   url += `&search=effective_time:[${dateFrom}+TO+${dateTo}]`;
