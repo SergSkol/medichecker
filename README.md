@@ -33,7 +33,9 @@
 
 # 👁‍🗨 Preview
 
-Placeholder
+![image](https://user-images.githubusercontent.com/106581139/211507352-e73768d4-4e7d-4b5a-be08-156709ae84bc.png)
+
+![image](https://user-images.githubusercontent.com/106581139/211507606-502d1a2d-5af7-4cc2-b04b-55ab1a345d15.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
