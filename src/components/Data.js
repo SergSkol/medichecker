@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { getCategoriesAction } from '../redux/categories/categories';
 import { getDetailsAction } from '../redux/details/details';
+import box from './images/box.svg';
 import cat1 from './images/cat1.svg';
 import cat2 from './images/cat2.svg';
 import cat3 from './images/cat3.svg';
@@ -105,11 +106,17 @@ const getDateTo = () => {
 const getCategories = () => async (dispatch) => {
   const transformData = (data) => {
     const newData = [];
+    let id = 0;
 
-    standardCategories.forEach((item) => {
-      const dataFound = data.filter(((e) => e.term === item.name));
-      const { count } = dataFound[0];
-      const newItem = { ...item, count };
+    data.forEach((item) => {
+      const name = item.term;
+      id += 1;
+      const { count } = item;
+      const catFound = standardCategories.filter((e) => e.name === item.term);
+      const image = catFound.length !== 0 ? catFound[0].image : box;
+      const newItem = {
+        id, name, image, count,
+      };
       newData.push(newItem);
     });
     return newData;

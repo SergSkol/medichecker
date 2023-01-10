@@ -33,9 +33,6 @@ const Categories = ({ categories }) => {
 };
 
 Categories.propTypes = {
-  // categories: PropTypes.shape({
-  //   name: PropTypes.string,
-  // }).isRequired,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
