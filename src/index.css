@@ -28,6 +28,14 @@ body {
   filter: invert(22%) sepia(9%) saturate(5505%) hue-rotate(186deg) brightness(92%) contrast(83%);
 }
 
+.categoriesSearch {
+  display: flex;
+  justify-content: space-between;
+  background-color: #35548b;
+  border: none;
+  border-radius: 5px;
+}
+
 .categoriesSubHeader {
   color: #fff;
   background-color: #35548b;
