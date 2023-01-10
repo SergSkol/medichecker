@@ -80,6 +80,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 - [Live Demo]( https://medichecker.vercel.app/ )
+- [Presentation](https://www.loom.com/share/f33f8d2e526f4b0498b86ea964f37c38)
 
 <!-- GETTING STARTED -->
 
