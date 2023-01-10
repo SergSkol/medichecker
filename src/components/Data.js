@@ -12,70 +12,60 @@ import cat7 from './images/cat7.svg';
 import cat8 from './images/cat8.svg';
 import cat9 from './images/cat9.svg';
 import cat10 from './images/cat10.svg';
+import cat11 from './images/cat11.svg';
+import cat12 from './images/cat12.svg';
 
 const REACT_APP_BASE_URL = 'https://api.fda.gov/drug/label.json?';
 const REACT_APP_COUNT_ROUTE = 'https://api.fda.gov/drug/label.json?count=openfda.route.exact';
 
 const standardCategories = [
   {
-    id: 1,
     name: 'ORAL',
     image: cat1,
-    count: 0,
   },
   {
-    id: 2,
     name: 'TOPICAL',
     image: cat2,
-    count: 0,
   },
   {
-    id: 3,
     name: 'INTRAVENOUS',
     image: cat3,
-    count: 0,
   },
   {
-    id: 4,
     name: 'INTRAMUSCULAR',
     image: cat4,
-    count: 0,
   },
   {
-    id: 5,
     name: 'OPHTHALMIC',
     image: cat5,
-    count: 0,
   },
   {
-    id: 6,
     name: 'DENTAL',
     image: cat6,
-    count: 0,
   },
   {
-    id: 7,
     name: 'RESPIRATORY (INHALATION)',
     image: cat7,
-    count: 0,
   },
   {
-    id: 8,
     name: 'SUBLINGUAL',
     image: cat8,
-    count: 0,
   },
   {
-    id: 9,
     name: 'SUBCUTANEOUS',
     image: cat9,
-    count: 0,
   },
   {
-    id: 10,
     name: 'NASAL',
     image: cat10,
-    count: 0,
+  },
+  {
+    name: 'EPIDURAL',
+    image: cat11,
+  },
+  {
+    name: 'AURICULAR (OTIC)',
+    image: cat12,
   },
 ];
 
@@ -151,7 +141,6 @@ const getDetails = (category) => async (dispatch) => {
         AI: item.active_ingredient,
         purpose: item.purpose,
         indications: item.indications_and_usage,
-
       };
       newData.push(newItem);
     });
