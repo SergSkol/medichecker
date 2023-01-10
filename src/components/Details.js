@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getDetails } from './Data';
+import DetailsList from './DetailsList';
 import backIcon from './images/chevron-left-solid.svg';
 
 const Details = () => {
@@ -10,12 +11,22 @@ const Details = () => {
   const dispatch = useDispatch();
 
   const details = useSelector((state) => state.details[location.state.name]) || [];
+  const [searchDetails, applySearchDetails] = useState('');
 
   useEffect(() => {
     if (details.length === 0) {
       dispatch(getDetails(location.state.name));
     }
   }, [dispatch, details.length, location.state.name]);
+
+  const foundDetails = details.filter(
+    (detail) => detail.name[0].toLowerCase().includes(searchDetails.toLowerCase()),
+  );
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    applySearchDetails(e.target.value);
+  };
 
   return (
     <div className="detailsPage">
@@ -41,33 +52,17 @@ const Details = () => {
           </p>
         </h3>
       </div>
-      <h4 className="detailsSubHeader">DRUGS BREAKDOWN</h4>
-      <ul className="detailsList">
-        {details.map((detail) => (
-          <li className="detailItem" key={detail.id}>
-            <p className="detailItemInfo">
-              Name:
-              <br />
-              {detail.name}
-            </p>
-            <p className="detailItemInfo">
-              Ingridients:
-              <br />
-              {detail.AI}
-            </p>
-            <p className="detailItemInfo">
-              Purpose:
-              <br />
-              {detail.purpose}
-            </p>
-            <p className="detailItemInfo">
-              Indications:
-              <br />
-              {detail.indications}
-            </p>
-          </li>
-        ))}
-      </ul>
+
+      <div className="detailsSearch">
+        <h4 className="detailsSubHeader">DRUGS BREAKDOWN</h4>
+        <input type="text" value={searchDetails} onChange={handleSearch} placeholder="search for drug" />
+      </div>
+
+      {searchDetails.length ? (
+        <DetailsList details={foundDetails} />
+      ) : (
+        <DetailsList details={details} />
+      )}
 
     </div>
   );

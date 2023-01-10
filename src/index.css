@@ -117,6 +117,14 @@ body {
   padding-left: 10px;
 }
 
+.detailsSearch {
+  display: flex;
+  justify-content: space-between;
+  background-color: #35548b;
+  border: none;
+  border-radius: 5px;
+}
+
 .detailsList {
   list-style: none;
   padding: 0;
@@ -134,4 +142,52 @@ body {
 
 .detailItemInfo {
   margin: 10px;
+}
+
+/* Desktop version */
+@media screen and (min-width: 562px) {
+  .categoriesList {
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    list-style: none;
+    margin: 0;
+  }
+
+  .categoryItem:nth-child(even) {
+    background-color: #4168af;
+  }
+
+  .categoryItem:nth-child(odd) {
+    background-color: #3e61a3;
+  }
+}
+
+/* Desktop version */
+@media screen and (min-width: 768px) {
+  .categoriesList {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    list-style: none;
+    margin: 0;
+  }
+
+  .categoryItem {
+    background-color: #3e61a3;
+  }
+
+  .categoryItem:nth-child(8n+1) {
+    background-color: #4168af;
+  }
+
+  .categoryItem:nth-child(8n+2) {
+    background-color: #3e61a3;
+  }
+
+  .categoryItem:nth-child(8n+3) {
+    background-color: #4168af;
+  }
+
+  .categoryItem:nth-child(8n+4) {
+    background-color: #3e61a3;
+  }
 }
