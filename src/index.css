@@ -5,6 +5,19 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.categoriesHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #35548b;
+}
+
+.categoriesHeaderContainer img {
+  width: 50px;
+  color: #fff;
+  filter: invert(22%) sepia(9%) saturate(5505%) hue-rotate(186deg) brightness(92%) contrast(83%);
+}
+
 .categoriesHeader {
   color: #fff;
   background-color: #35548b;
@@ -142,6 +155,11 @@ body {
 
 .detailItemInfo {
   margin: 10px;
+}
+
+.infoText {
+  font-size: 32px;
+  margin: 30px;
 }
 
 /* Desktop version */
