@@ -106,7 +106,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/SergSkol/capstone3.git
+  git clone https://github.com/SergSkol/medichecker.git
 ```
 
 ### Install <a name="install"></a>
@@ -114,7 +114,7 @@ Clone this repository to your desired folder:
 Install all the dependencys required for the website, by using the command below
 
 ```sh
-  cd capstone3
+  cd medichecker
   npm install
 ```
 
